@@ -1,17 +1,18 @@
-# /bin/bash
+#!/bin/bash
 
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
-
-brew install node
+# chmod 664 /$HOME/.zprofile && \
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /$HOME/.zprofile && \
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # zsh
-chmod +x ./zsh/setup.sh
+chmod +x ./zsh/setup.sh && \
 ./zsh/setup.sh
 
 # install z
 mkdir ~/bin && \
-https://github.com/rupa/z.git ~/bin
+git clone https://github.com/rupa/z.git ~/bin/z
 
 # git alias
 git config --global alias.co checkout

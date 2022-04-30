@@ -1,5 +1,7 @@
-# /bin/bash
+#!/bin/bash
 
-npm install -g pure-prompt && \
+brew install pure && \
 
-ln -s $(pwd)/.zshrc ~
+ln -s $(pwd)/zsh/.zshrc ~ && \
+
+source ~/.zshrc
