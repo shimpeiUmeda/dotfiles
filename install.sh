@@ -3,10 +3,11 @@
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
 
-brew install node && \
+brew install node
 
-# for zsh prompt
-npm install -g pure-prompt
+# zsh
+chmod +x ./zsh/setup.sh
+./zsh/setup.sh
 
 # install z
 mkdir ~/bin && \

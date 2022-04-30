@@ -38,6 +38,8 @@ source $HOME/bin/z/z.sh
 
 ## alias
 alias ll="ls -la"
+alias ..="cd .."
+alias ....="cd ../.."
 
 alias coz="code ~/.zshrc"
 alias souz="source ~/.zshrc"
@@ -48,3 +50,4 @@ alias dif="git diff"
 alias ad="git add -A"
 alias adp="git add -p"
 alias ci="git commit -m"
+alias pull="git pull -r --au"
