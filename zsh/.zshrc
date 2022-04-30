@@ -26,7 +26,7 @@ setopt hist_ignore_all_dups
 ## 補完機能ON
 if type brew &>/dev/null; then
     FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-    FPATH=~/.zsh/completion:$FPATH 
+    FPATH=~/.zsh/completion:$FPATH
 
     autoload -Uz compinit
     compinit
@@ -44,6 +44,7 @@ alias souz="source ~/.zshrc"
 alias co="code ."
 
 alias st="git status"
-alias diff="git diff"
-alias add="git add -A"
-alias addp="git add -p"
+alias dif="git diff"
+alias ad="git add -A"
+alias adp="git add -p"
+alias ci="git commit -m"
