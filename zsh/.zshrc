@@ -41,6 +41,10 @@ if type brew &>/dev/null; then
     zstyle ':completion:*' list-colors 'di=34'
 fi
 
+## item2の設定
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+source ~/.iterm2_shell_integration.zsh
+
 ## lsの色設定
 export LSCOLORS=exfxcxdxcxegedabagacad
 
