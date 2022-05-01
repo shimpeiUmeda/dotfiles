@@ -35,6 +35,9 @@ if type brew &>/dev/null; then
     zstyle ':completion:*' list-colors 'di=34'
 fi
 
+# lsの色設定
+export LSCOLORS=exfxcxdxcxegedabagacad
+
 source <(minikube completion zsh)
 source <(kubectl completion zsh)
 source $HOME/bin/z/z.sh
