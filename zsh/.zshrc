@@ -30,6 +30,9 @@ if type brew &>/dev/null; then
 
     autoload -Uz compinit
     compinit
+
+    # 補完時のdirectoryの色を青にする
+    zstyle ':completion:*' list-colors 'di=34'
 fi
 
 source <(minikube completion zsh)
@@ -37,16 +40,19 @@ source <(kubectl completion zsh)
 source $HOME/bin/z/z.sh
 
 ## alias
-alias ll="ls -la"
-alias ..="cd .."
-alias ....="cd ../.."
-
 alias coz="code ~/.zshrc"
 alias souz="source ~/.zshrc"
 alias co="code ."
 
+alias ls="ls -G" # G -> 結果表示時に色を付ける
+alias ll="ls -laG"
+alias ..="cd .."
+alias ....="cd ../.."
+alias copy="tr -d '\n' | pbcopy"
+
 alias st="git status"
 alias dif="git diff"
+alias difc="git diff --cached"
 alias ad="git add -A"
 alias adp="git add -p"
 alias ci="git commit -m"
