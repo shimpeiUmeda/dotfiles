@@ -51,6 +51,7 @@ export LSCOLORS=exfxcxdxcxegedabagacad
 source <(minikube completion zsh)
 source <(kubectl completion zsh)
 source $HOME/bin/z/z.sh
+# [ -f ~/.fzf.bash ] && source ~/.fzf.basht
 
 ## alias
 alias coz="code ~/.zshrc"
