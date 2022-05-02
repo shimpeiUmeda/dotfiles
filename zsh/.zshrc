@@ -59,7 +59,7 @@ alias sz='source ~/.zshrc'
 alias co='code .'
 
 alias ls='ls -G' # G -> 結果表示時に色を付ける
-alias ll='ls -laG'
+alias l='ls -laG'
 alias ..='cd ..'
 alias ....='cd ../..'
 alias c='tr -d "\n" | pbcopy'
