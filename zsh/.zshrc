@@ -50,7 +50,7 @@ export LSCOLORS=exfxcxdxcxegedabagacad
 
 source <(minikube completion zsh)
 source <(kubectl completion zsh)
-source $HOME/bin/z/z.sh
+source $(brew --prefix)/etc/profile.d/z.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## alias
@@ -72,3 +72,8 @@ alias adp="git add -p"
 alias ci='(){git commit -m "$1"}'
 alias pull="git pull -r --au"
 alias push="git push"
+
+# git alias
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.st status
