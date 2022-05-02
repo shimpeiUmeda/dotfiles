@@ -70,6 +70,8 @@ alias difc='git diff --cached'
 alias ad='git add -A'
 alias adp='git add -p'
 alias ci='(){git commit -m "$1"}'
+alias uncommit='git reset --soft HEAD^'
+alias reset='git reset --hard'
 alias pull='git pull -r --au'
 alias push='git push'
 
