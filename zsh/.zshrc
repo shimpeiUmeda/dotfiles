@@ -51,18 +51,18 @@ export LSCOLORS=exfxcxdxcxegedabagacad
 source <(minikube completion zsh)
 source <(kubectl completion zsh)
 source $HOME/bin/z/z.sh
-# [ -f ~/.fzf.bash ] && source ~/.fzf.basht
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## alias
 alias coz="code ~/.zshrc"
-alias souz="source ~/.zshrc"
+alias sz="source ~/.zshrc"
 alias co="code ."
 
 alias ls="ls -G" # G -> 結果表示時に色を付ける
 alias ll="ls -laG"
 alias ..="cd .."
 alias ....="cd ../.."
-alias copy="tr -d '\n' | pbcopy"
+alias c="tr -d '\n' | pbcopy"
 
 alias st="git status"
 alias dif="git diff"
