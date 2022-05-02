@@ -54,24 +54,24 @@ source $(brew --prefix)/etc/profile.d/z.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## alias
-alias coz="code ~/.zshrc"
-alias sz="source ~/.zshrc"
-alias co="code ."
+alias coz='code ~/.zshrc'
+alias sz='source ~/.zshrc'
+alias co='code .'
 
-alias ls="ls -G" # G -> 結果表示時に色を付ける
-alias ll="ls -laG"
-alias ..="cd .."
-alias ....="cd ../.."
-alias c="tr -d '\n' | pbcopy"
+alias ls='ls -G' # G -> 結果表示時に色を付ける
+alias ll='ls -laG'
+alias ..='cd ..'
+alias ....='cd ../..'
+alias c='tr -d "\n" | pbcopy'
 
-alias st="git status"
-alias dif="git diff"
-alias difc="git diff --cached"
-alias ad="git add -A"
-alias adp="git add -p"
+alias st='git status'
+alias dif='git diff'
+alias difc='git diff --cached'
+alias ad='git add -A'
+alias adp='git add -p'
 alias ci='(){git commit -m "$1"}'
-alias pull="git pull -r --au"
-alias push="git push"
+alias pull='git pull -r --au'
+alias push='git push'
 
 # git alias
 git config --global alias.co checkout
