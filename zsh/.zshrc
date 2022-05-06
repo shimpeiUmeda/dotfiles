@@ -54,6 +54,7 @@ source $(brew --prefix)/etc/profile.d/z.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## alias
+alias cdz='cd $HOME/dotfiles'
 alias coz='code ~/.zshrc'
 alias sz='source ~/.zshrc'
 alias co='code .'
