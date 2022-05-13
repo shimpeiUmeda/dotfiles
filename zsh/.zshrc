@@ -33,6 +33,7 @@ setopt hist_reduce_blanks
 if type brew &>/dev/null; then
     FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
     FPATH=~/.zsh/completion:$FPATH
+    source $(brew --prefix)/etc/profile.d/z.sh
 
     autoload -Uz compinit
     compinit
@@ -40,17 +41,8 @@ if type brew &>/dev/null; then
     # 補完時のdirectoryの色を青にする
     zstyle ':completion:*' list-colors 'di=34'
 fi
-
-# item2の設定
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-source ~/.iterm2_shell_integration.zsh
-
-# lsの色設定
-export LSCOLORS=exfxcxdxcxegedabagacad
-
 source <(minikube completion zsh)
 source <(kubectl completion zsh)
-source $(brew --prefix)/etc/profile.d/z.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # alias
@@ -59,6 +51,7 @@ alias coz='code ~/.zshrc'
 alias sz='source ~/.zshrc'
 alias co='code .'
 
+export LSCOLORS=exfxcxdxcxegedabagacad # lsの色設定
 alias ls='ls -G' # G -> 結果表示時に色を付ける
 alias l='ls -laG'
 alias ..='cd ..'
@@ -80,6 +73,10 @@ alias push='git push'
 git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.st status
+
+# item2の設定
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+source ~/.iterm2_shell_integration.zsh
 
 # ardito
 source $HOME/dotfiles/zsh/.ardito 
