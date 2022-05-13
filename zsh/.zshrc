@@ -51,7 +51,6 @@ export LSCOLORS=exfxcxdxcxegedabagacad
 source <(minikube completion zsh)
 source <(kubectl completion zsh)
 source $(brew --prefix)/etc/profile.d/z.sh
-eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # alias
@@ -81,3 +80,6 @@ alias push='git push'
 git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.st status
+
+# ardito
+source $HOME/dotfiles/zsh/.ardito 

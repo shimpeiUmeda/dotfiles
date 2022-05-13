@@ -1,0 +1,6 @@
+# completion
+eval "$(pyenv init -)"
+eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+
+# alias
+alias lvx-proxy='sshuttle -r lvx-proxy 3.114.87.166/32 18.179.207.73/32 54.65.78.71/32 52.68.23.243/32'
