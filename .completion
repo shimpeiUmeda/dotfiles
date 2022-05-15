@@ -1,0 +1,18 @@
+source <(minikube completion zsh)
+source <(kubectl completion zsh)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# mac
+if [ $(uname -s) = 'Darwin' ]; then
+
+if type brew &>/dev/null; then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+    autoload -Uz compinit
+    compinit
+fi
+
+# linux
+else
+
+fi

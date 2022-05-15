@@ -1,10 +1,8 @@
-# プロンプトのテーマ設定
-autoload -U promptinit; promptinit
-prompt pure
-
-# 小文字でも大文字ディレクトリ、ファイルを補完できるようにする
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
+#-----------------------------------------------------------------------
+#
+# zsh configuration
+#
+#-----------------------------------------------------------------------
 # 日本語ファイルを表示
 setopt print_eight_bit
 
@@ -29,54 +27,57 @@ setopt hist_ignore_all_dups
 # historyに保存するときに余分なスペースを削除する
 setopt hist_reduce_blanks
 
-# 補完機能ON
-if type brew &>/dev/null; then
-    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-    FPATH=~/.zsh/completion:$FPATH
-    source $(brew --prefix)/etc/profile.d/z.sh
+# 小文字でも大文字ディレクトリ、ファイルを補完できるようにする
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-    autoload -Uz compinit
-    compinit
+# 補完時のdirectoryの色を青にする
+zstyle ':completion:*' list-colors 'di=34'
 
-    # 補完時のdirectoryの色を青にする
-    zstyle ':completion:*' list-colors 'di=34'
-fi
-source <(minikube completion zsh)
-source <(kubectl completion zsh)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#-----------------------------------------------------------------------
+#
+# install command and zsh plugins
+#
+#-----------------------------------------------------------------------
+[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
 
-# alias
-alias cdz='cd $HOME/dotfiles'
-alias coz='code ~/.zshrc'
-alias sz='source ~/.zshrc'
-alias co='code .'
+# Start Znap
+source ~/Git/zsh-snap/znap.zsh  
 
-export LSCOLORS=exfxcxdxcxegedabagacad # lsの色設定
-alias ls='ls -G' # G -> 結果表示時に色を付ける
-alias l='ls -laG'
-alias ..='cd ..'
-alias ....='cd ../..'
-alias c='tr -d "\n" | pbcopy'
+znap prompt sindresorhus/pure
 
-alias st='git status'
-alias dif='git diff'
-alias difc='git diff --cached'
-alias ad='git add -A'
-alias adp='git add -p'
-alias ci='(){git commit -m "$1"}'
-alias uncommit='git reset --soft HEAD^'
-alias reset='git reset --hard'
-alias pull='git pull -r --au'
-alias push='git push'
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
 
-# git alias
-git config --global alias.co checkout
-git config --global alias.ci commit
-git config --global alias.st status
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
+znap source marlonrichert/zsh-autocomplete
+znap source marlonrichert/zsh-edit
+# znap source junegunn/fzf
 
-# item2の設定
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-source ~/.iterm2_shell_integration.zsh
+znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
+
+znap function _pyenv pyenv              'eval "$( pyenv init - --no-rehash )"'
+compctl -K    _pyenv pyenv
+
+znap function _pip_completion pip       'eval "$( pip completion --zsh )"'
+compctl -K    _pip_completion pip
+
+znap function _python_argcomplete pipx  'eval "$( register-python-argcomplete pipx  )"'
+complete -o nospace -o default -o bashdefault \
+           -F _python_argcomplete pipx
+
+znap function _pipenv pipenv            'eval "$( pipenv --completion )"'
+compdef       _pipenv pipenv
+
+#-----------------------------------------------------------------------
+#
+# その他読み込み
+#
+#-----------------------------------------------------------------------
+# alias設定
+source $HOME/dotfiles/.alias
 
 # ardito
 source $HOME/dotfiles/zsh/.ardito 

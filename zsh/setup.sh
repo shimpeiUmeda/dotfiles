@@ -1,7 +1,4 @@
 #!/bin/bash
 
-brew install pure && \
-
-ln -s $(pwd)/zsh/.zshrc ~ && \
-
+ln -s ~/dotfiles/zsh/.zshrc ~ && \
 source ~/.zshrc
