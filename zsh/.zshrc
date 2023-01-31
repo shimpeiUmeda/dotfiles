@@ -33,6 +33,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 補完時のdirectoryの色を青にする
 zstyle ':completion:*' list-colors 'di=34'
 
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
+
 #-----------------------------------------------------------------------
 #
 # install command and zsh plugins
@@ -46,30 +49,13 @@ zstyle ':completion:*' list-colors 'di=34'
 source ~/Git/zsh-snap/znap.zsh  
 
 znap prompt sindresorhus/pure
-
-# turn on git stash status
-zstyle :prompt:pure:git:stash show yes
-
-znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-syntax-highlighting
-znap source marlonrichert/zsh-autocomplete
-znap source marlonrichert/zsh-edit
+# znap source zsh-users/zsh-autosuggestions
+# znap source zsh-users/zsh-syntax-highlighting
+# znap source marlonrichert/zsh-autocomplete
+# znap source marlonrichert/zsh-edit
 # znap source junegunn/fzf
 
 znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
-
-znap function _pyenv pyenv              'eval "$( pyenv init - --no-rehash )"'
-compctl -K    _pyenv pyenv
-
-znap function _pip_completion pip       'eval "$( pip completion --zsh )"'
-compctl -K    _pip_completion pip
-
-znap function _python_argcomplete pipx  'eval "$( register-python-argcomplete pipx  )"'
-complete -o nospace -o default -o bashdefault \
-           -F _python_argcomplete pipx
-
-znap function _pipenv pipenv            'eval "$( pipenv --completion )"'
-compdef       _pipenv pipenv
 
 #-----------------------------------------------------------------------
 #
@@ -78,6 +64,4 @@ compdef       _pipenv pipenv
 #-----------------------------------------------------------------------
 # alias設定
 source $HOME/dotfiles/.alias
-
-# ardito
-source $HOME/dotfiles/zsh/.ardito 
+source $HOME/dotfiles/.completion
