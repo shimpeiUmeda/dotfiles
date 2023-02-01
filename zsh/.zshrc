@@ -27,13 +27,16 @@ setopt hist_ignore_all_dups
 # historyに保存するときに余分なスペースを削除する
 setopt hist_reduce_blanks
 
+# ディレクトリのエイリアスを作成できるようにする
+setopt AUTO_NAME_DIRS
+
 # 小文字でも大文字ディレクトリ、ファイルを補完できるようにする
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # 補完時のdirectoryの色を青にする
 zstyle ':completion:*' list-colors 'di=34'
 
-# turn on git stash status
+# git stashのステータスを表示
 zstyle :prompt:pure:git:stash show yes
 
 #-----------------------------------------------------------------------
@@ -55,7 +58,7 @@ znap prompt sindresorhus/pure
 # znap source marlonrichert/zsh-edit
 # znap source junegunn/fzf
 
-znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
+# znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 
 #-----------------------------------------------------------------------
 #
@@ -65,3 +68,5 @@ znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 # alias設定
 source $HOME/dotfiles/.alias
 source $HOME/dotfiles/.completion
+
+source $HOME/dotfiles/.lecto
