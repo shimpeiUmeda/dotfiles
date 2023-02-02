@@ -1,5 +1,5 @@
 # source <(minikube completion zsh)
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # mac

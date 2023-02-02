@@ -1,0 +1,51 @@
+#-----------------------------------------------------------------------
+#
+# command alias
+#
+#-----------------------------------------------------------------------
+alias coz 'code $HOME/.config/fish/config.fish'
+alias sz 'source $HOME/.config/fish/config.fish'
+
+alias .. 'cd ..'
+alias ... 'cd ../..'
+alias .... 'cd ../../..'
+
+alias st 'git status'
+alias dif 'git diff'
+alias difc 'git diff --cached'
+alias ad 'git add -A'
+alias adp 'git add -p'
+# alias ci '(){git commit -m "$1"}'
+alias co 'git checkout'
+alias uncommit 'git reset --soft HEAD^'
+alias reset 'git reset --hard'
+alias pull 'git pull -r --au'
+alias push 'git push'
+
+alias dc "docker compose"
+alias dcps "docker compose ps"
+alias dcup "docker compose up -d"
+alias dcdown "docker compose down"
+
+git config --global alias.co checkout
+git config --global alias.ci commis
+git config --global alias.st status
+
+# mac
+# if [ $(uname -s)   'Darwin' ]; then
+# echo 'alias for mac!'
+
+# export LSCOLORS exfxcxdxcxegedabagacad
+# alias ls 'ls -GF' # G -> 結果表示時に色を付ける
+# alias l 'ls -laGF' # F -> dir:「/」link:「@」を付ける
+
+# alias c 'tr -d "\n" | pbcopy'
+
+# # linux
+# else
+echo 'alias for linux!'
+
+# eval `dircolors ~/.colorrc`
+alias ls 'ls -F --color'
+alias l 'ls -laF --color'
+# fi

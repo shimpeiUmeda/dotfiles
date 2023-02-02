@@ -1,4 +1,4 @@
 #!/bin/bash
 
-ln -s ~/dotfiles/zsh/.zshrc ~ && \
+ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc && \
 source ~/.zshrc
