@@ -48,4 +48,6 @@ echo 'alias for linux!'
 # eval `dircolors ~/.colorrc`
 alias ls 'ls -F --color'
 alias l 'ls -laF --color'
+
+alias c 'xsel -bi'
 # fi
