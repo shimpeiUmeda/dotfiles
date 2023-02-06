@@ -4,6 +4,7 @@
 #
 #-----------------------------------------------------------------------
 set -U FZF_LEGACY_KEYBINDINGS 0
+set PATH $HOME/.cargo/bin $PATH
 
 #-----------------------------------------------------------------------
 #
@@ -18,5 +19,5 @@ source ~/.asdf/asdf.fish
 #
 #-----------------------------------------------------------------------
 # alias設定
-source $HOME/dotfiles/fish/.alias
-# source $HOME/dotfiles/.completion
+source $HOME/private/dotfiles/fish/.alias
+# source $HOME/private/dotfiles/.completion
