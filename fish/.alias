@@ -16,6 +16,7 @@ alias difc 'git diff --cached'
 alias ad 'git add -A'
 alias adp 'git add -p'
 # alias ci '(){git commit -m "$1"}'
+alias ci 'git commit -m'
 alias co 'git checkout'
 alias uncommit 'git reset --soft HEAD^'
 alias reset 'git reset --hard'
@@ -28,7 +29,7 @@ alias dcup "docker compose up -d"
 alias dcdown "docker compose down"
 
 git config --global alias.co checkout
-git config --global alias.ci commis
+git config --global alias.ci commit
 git config --global alias.st status
 
 # mac
