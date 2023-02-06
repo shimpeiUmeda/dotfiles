@@ -20,5 +20,3 @@ source ~/.asdf/asdf.fish
 # alias設定
 source $HOME/dotfiles/fish/.alias
 # source $HOME/dotfiles/.completion
-
-# source $HOME/dotfiles/.lecto
