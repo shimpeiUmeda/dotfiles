@@ -24,27 +24,23 @@ alias reset 'git reset --hard'
 alias pull 'git pull -r --au'
 alias push 'git push'
 
-alias dc "docker compose"
-alias dcps "docker compose ps"
-alias dcup "docker compose up -d"
-alias dcdown "docker compose down"
-
-git config --global alias.co checkout
-git config --global alias.ci commit
-git config --global alias.st status
-
 # mac
-# if [ $(uname -s)   'Darwin' ]; then
-# echo 'alias for mac!'
+if test (uname -s) = "Darwin"
+echo 'alias for mac!'
 
-# export LSCOLORS exfxcxdxcxegedabagacad
-# alias ls 'ls -GF' # G -> 結果表示時に色を付ける
-# alias l 'ls -laGF' # F -> dir:「/」link:「@」を付ける
+export LSCOLORS exfxcxdxcxegedabagacad
+alias ls 'ls -GF' # G -> 結果表示時に色を付ける
+alias l 'ls -laGF' # F -> dir:「/」link:「@」を付ける
 
-# alias c 'tr -d "\n" | pbcopy'
+alias c 'tr -d "\n" | pbcopy'
 
-# # linux
-# else
+alias dc "docker-compose"
+alias dcps "docker-compose ps"
+alias dcup "docker-compose up -d"
+alias dcdown "docker-compose down"
+
+else
+# linux
 echo 'alias for linux!'
 
 # eval `dircolors ~/.colorrc`
@@ -52,4 +48,9 @@ alias ls 'ls -F --color'
 alias l 'ls -laF --color'
 
 alias c 'xsel -bi'
-# fi
+
+alias dc "docker compose"
+alias dcps "docker compose ps"
+alias dcup "docker compose up -d"
+alias dcdown "docker compose down"
+end
