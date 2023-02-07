@@ -60,6 +60,16 @@ znap prompt sindresorhus/pure
 
 # znap eval iterm2 'curl -fsSL https://iterm2.com/shell_integration/zsh'
 
+# ssh-agent起動
+if [ -f ~/.ssh-agent ]; then
+    . ~/.ssh-agent
+fi
+if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+    ssh-agent > ~/.ssh-agent
+    . ~/.ssh-agent
+fi
+ssh-add -l >& /dev/null || ssh-add
+
 #-----------------------------------------------------------------------
 #
 # その他読み込み
@@ -68,5 +78,3 @@ znap prompt sindresorhus/pure
 # alias設定
 source $HOME/dotfiles/.alias
 source $HOME/dotfiles/.completion
-
-source $HOME/dotfiles/.lecto
